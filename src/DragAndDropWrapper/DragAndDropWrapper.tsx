@@ -39,7 +39,7 @@ export const DragAndDropWrapper: React.StatelessComponent<Props> = ({
 }: Props) => {
   return (
     <DragDropContext onDragEnd={mapAndInvoke(onDragEnd)}>
-      {chunks.map(({ id: droppableId, items }: Chunk) => (
+      {chunks.map(({ id: droppableId, items }: Chunk, chunkIndex) => (
         <Droppable key={droppableId} droppableId={droppableId} direction={direction}>
           {(provided: DroppableProvided, _: DroppableStateSnapshot) => (
             <div
@@ -48,7 +48,7 @@ export const DragAndDropWrapper: React.StatelessComponent<Props> = ({
               {...provided.droppableProps}
             >
               {items.map((item: any, index: number) => (
-                <ListManagerItem key={hash(item)} item={item} index={index} render={render} />
+                <ListManagerItem key={hash(item)} item={item} index={index} render={render} chunkIndex={chunkIndex} />
               ))}
               {provided.placeholder}
             </div>

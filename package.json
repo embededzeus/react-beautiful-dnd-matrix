@@ -1,6 +1,6 @@
 {
   "name": "react-beautiful-dnd-matrix",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "Grid management for react-beautiful-dnd",
   "main": "lib/index.js",
   "scripts": {
@@ -22,7 +22,7 @@
     "component"
   ],
   "author": "Mahendra Naik",
-  "license": "ZAPCOM",
+  "license": "(ZAPCOM) UNLICENSED",
   "bugs": {
     "url": "https://github.com/embededzeus/react-beautiful-dnd-matrix.git"
   },

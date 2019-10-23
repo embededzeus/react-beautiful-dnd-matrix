@@ -67,6 +67,11 @@ export const withMaxItems = <T, P extends Props>(
           indexInDestinationChunk
         );
         this.props.onDragEnd(sourceIndex, destinationIndex);
+      } else {
+        const { index: indexInSourceChunk, id: sourceChunkId } = source;
+        const sourceChunkIndex: number = this.findChunkIndex(sourceChunkId);
+        const sourceIndex: number = computeOriginalIndex(this.state.maxItems, sourceChunkIndex, indexInSourceChunk);
+        this.props.onDragEnd(sourceIndex, 0);
       }
     };
 

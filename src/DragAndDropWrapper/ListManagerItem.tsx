@@ -6,17 +6,19 @@ export interface ListManagerItemProps {
   item: any;
   index: number;
   render(item: any): ReactElement<{}>;
+  chunkIndex: number;
 }
 
 export const ListManagerItem: React.StatelessComponent<ListManagerItemProps> = ({
   item,
   index,
-  render
+  render,
+  chunkIndex
 }: ListManagerItemProps) => (
   <Draggable draggableId={hash(item)} index={index}>
     {(provided: DraggableProvided, snapshot: DraggableStateSnapshot) => (
       <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-        {render({item, index, ...snapshot})}
+        {render({item, index, chunkIndex, ...snapshot})}
       </div>
     )}
   </Draggable>
