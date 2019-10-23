@@ -16,7 +16,7 @@ export const ListManagerItem: React.StatelessComponent<ListManagerItemProps> = (
   <Draggable draggableId={hash(item)} index={index}>
     {(provided: DraggableProvided, snapshot: DraggableStateSnapshot) => (
       <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-        {render(item, snapshot)}
+        {render({item, index, ...snapshot})}
       </div>
     )}
   </Draggable>
