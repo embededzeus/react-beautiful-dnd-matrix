@@ -28,7 +28,8 @@ export interface Props {
 const horizontalStyle: React.CSSProperties = {
   display: "flex",
   flexDirection: "row",
-  alignItems: "flex-start"
+  alignItems: "flex-start",
+  justifyContent: "space-between"
 };
 
 export const DragAndDropWrapper: React.StatelessComponent<Props> = ({
